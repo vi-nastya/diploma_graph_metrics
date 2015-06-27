@@ -90,6 +90,36 @@
 %  \end{center}
 \end{table}
 
+Результаты вычисления максимальных корреляций при возведении матрицы $D$ в степени $p$, отличные от $1.0$ (в таблице показаны только те метрики, которые позволяли получить хорошее приближение евклидового расстояния в предыдущем эксперименте):
+
+\begin{table} [!htbp]
+  \centering
+  \parbox{15cm}{\caption{Зависимость максимальной корреляции от степени для $\varepsilon$-графов}\label{Ts0Sib}}
+%  \begin{center}
+  \begin{tabular}{| p{5cm} || p{1.5cm} |p{1.5cm} |p{1.5cm} | p{1.5cm}l |}
+  \hline
+  \hline
+  Метрика   & \centering $p=0.25$&\centering $p= 0.5$&\centering $p= 0.75$&\centering $p=1.0$& \\
+  \hline
+  Log Walk  &\centering  0.975  &\centering  0.979  &  \centering  0.982  &\centering  0.984    &  \\
+  \hline
+  Log Forest &\centering  0.971 &\centering  0.973 &\centering  0.974 &\centering  0.975   &   \\
+  \hline
+  Log Communicability  &\centering  0.974 &\centering  0.974 &\centering  0.975 &\centering  0.975 &  \\
+  \hline
+  Shortest Path &\centering  0.955 &\centering  0.960 &\centering  0.963 &\centering  0.964 & \\
+  \hline
+  Free Energy &\centering  0.982 &\centering  0.984  &\centering  0.985  &\centering  0.986 & \\
+  \hline
+  Avrachenkov  &\centering  0.862 &\centering  0.862 &\centering  0.863 &\centering  0.863    &\\
+  \hline
+  Log Avrachenkov &\centering  0.981 &\centering  0.984 &\centering  0.985 &\centering  0.986  &  \\
+  \hline
+  \hline
+  \end{tabular}
+%  \end{center}
+\end{table}
+
 
 \clearpage
 %===========================================
@@ -176,7 +206,7 @@
   \hline
   Avrachenkov &\centering  0.95   &\centering  0.813    &\\
   \hline
-  Log Avrachenkov &\centering  1.0   &\centering  0.920  &  \\
+  Log Avrachenkov &\centering  0.051   &\centering  0.920  &  \\
   \hline
   \hline
   \end{tabular}
@@ -184,6 +214,7 @@
 \end{table}
 
 %=================================
+При возведении элементов матрицы $D$ в степени, отличные от $1.0$, качественное поведение корреляций такое же, как в случае $\varepsilon$-графов.
 
 \clearpage
 
@@ -250,7 +281,7 @@
   \hline
   Walk &\centering  0.01  &\centering  0.319   &  \\
   \hline
-  Log Walk  &\centering  0.67   &\centering  0.963    &  \\
+  Log Walk  &\centering  0.38   &\centering  0.963    &  \\
   \hline
   Forest &\centering  1.0   &\centering  0.669    &  \\
   \hline
@@ -276,6 +307,7 @@
 \end{table}
 
 %\newpage
+При возведении элементов матрицы $D$ в степени, отличные от $1.0$, качественное поведение корреляций такое же, как в случае $\varepsilon$-графов.
 %============================================================================================================================
 \clearpage
 
@@ -363,22 +395,24 @@
   \hline
   Avrachenkov &\centering  0.95   &\centering  0.959    &\\
   \hline
-  Log Avrachenkov &\centering  1.0   &\centering  0.992  &  \\
+  Log Avrachenkov &\centering  0.73   &\centering  0.992  &  \\
   \hline
   \hline
   \end{tabular}
 %  \end{center}
 \end{table}
 
+При возведении элементов матрицы $D$ в степени, отличные от $1.0$, качественное поведение корреляций такое же, как в случае $\varepsilon$-графов.
+
 %=================================
 \section{Комментарии к результатам} \label{sect3_3} 
 
-Данные графики были получены в результате усреднения по 50 экспериментам.
+В экспериментах усреднение производилось по 50 графам с одинаковыми параметрами. Затем усредненные результаты для разных параметров сравнивались между собой.
 
 Максимумы на графиках незначительно меняют свое положение при изменении параметров графа до тех пор, пока он не начинает распадаться на кластеры, после чего значения коэффициентов корреляции в максимумах начинает уменьшаться.
 
 Заметим, что в случае метрики Авраченкова представлены результаты только для $\sigma=1.0$, для других значений данного параметра зависимость от параметра аналогичная. Это связано с близостью степеней вершин в исследуемых графах.
 
-В результате экспериментов для поиска оптимальных степеней выяснилось, что возведение элементов матрицы $D$ в степени, отличные от $1.0$, не улучшают качества приближения евклидового расстояния.
+Для вычисления communicability distance использовалось приближение матричной экспоненты первыми 40 членами ряда.
 
 \clearpage
